@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <form action="/response" method="post">
+        <label for="user_input">Enter your question:</label><br>
+        <input type="text" id="user_input" name="user_input"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chatbot</h1>
+        <form action="/response" method="post">
+            <label for="user_input">Ask a question:</label><br>
+            <input type="text" id="user_input" name="user_input"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if response %}
+        <h1>Chatbot Response</h1>
+        <div class="message">
+            <p class="question">User's Question:</p>
+            <p class="question-text">{{ user_question }}</p>
+        </div>
+        <div class="message">
+            <p class="response">Chatbot's Response:</p>
+            <p class="response-text">{{ response }}</p>
+        </div>
+        <a href="/">Ask another question</a>
+        {% else %}
+        <h1>Chatbot</h1>
+        <form action="/response" method="post">
+            <label for="user_input">Ask a question:</label><br>
+            <input type="text" id="user_input" name="user_input"><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

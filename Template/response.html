@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Response</title>
+</head>
+<body>
+    <h1>Chatbot Response</h1>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% else %}
+        <p>No response found.</p>
+    {% endif %}
+    <a href="/">Ask another question</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Response</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot Response</h1>
+        <div class="message">
+            <p class="question">User's Question:</p>
+            <p class="question-text">{{ user_question }}</p>
+        </div>
+        <div class="message">
+            <p class="response">Chatbot's Response:</p>
+            <p class="response-text">{{ response }}</p>
+        </div>
+        <a href="/">Ask another question</a>
+    </div>
+ 
+</body>
+</html> 
